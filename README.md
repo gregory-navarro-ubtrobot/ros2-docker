@@ -15,3 +15,15 @@ Run the docker image, with your local ROS workspace mounted. This allows any cha
 ### Mount ROS workspace
 
 `docker run -it -v <local target directory>:<container target directory> local/ros2-dev:latest`
+
+# Other notes
+
+## Current command to run
+
+docker run -it -p 9090:9090 ros-bridge:latest
+
+## RCLNODEJS install problems
+
+Installing rclnodejs with npm fails when performed from the dockerfile. Not sure why.
+
+Build the container from the dockerfile, then run `npm i rclnodejs` to install. That works fine.
